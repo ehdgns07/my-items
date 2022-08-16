@@ -12,8 +12,9 @@ function App() {
   const [soltedItmes, setSoltedItems] = useState([])
 
   const handleNewest = ()=> {
-    const newEstItem =  items.solt((item1, item2)=> (item2.createdAt - item1.createdAt) )
-    setItems(newEstItem);
+    const newEstItem =  items.sort((item1, item2)=> (item2.createdAt - item1.createdAt) )
+    console.log(newEstItem);
+    setItems([...newEstItem]);
   }
 
 
