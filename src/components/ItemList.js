@@ -15,7 +15,7 @@ function Item({ item }){
         <div>
             <div>{title}</div>
             <div>{content}</div>
-            <div>{calorie}</div>
+            <div>{calorie} kal</div>
             <img src={imgUrl}/>
             {/*<div>{createdAt}</div>*/}
             <div>{ConvertingDate(date)}</div>

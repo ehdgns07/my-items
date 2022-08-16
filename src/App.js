@@ -9,20 +9,22 @@ import ItemList from "./components/ItemList";
 
 function App() {
   const [items, setItems] = useState(mockItems);
-  const [soltedItmes, setSoltedItems] = useState([])
 
   const handleNewest = ()=> {
-    const newEstItem =  items.sort((item1, item2)=> (item2.createdAt - item1.createdAt) )
-    console.log(newEstItem);
+    const newEstItem =  items.sort((item1, item2)=> (item2.createdAt - item1.createdAt) )// 내림차순
     setItems([...newEstItem]);
   }
 
+  const handleCalorie = () => {
+    const newEstItem =  items.sort((item1, item2)=> (item2.calorie - item1.calorie) )
+    setItems([...newEstItem]);
+  }
 
   return (
   <div>
   <ItemForm/>
     <button onClick={handleNewest}>최신순</button>
-    <button>칼로리순</button>
+    <button onClick={handleCalorie}>칼로리순</button>
     <ItemList items={items}/>
 
   </div>
