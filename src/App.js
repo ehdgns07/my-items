@@ -3,18 +3,27 @@ import './App.css';
 
 import {useState} from "react";
 
-import itemForm from "./components/itemForm";
+import ItemForm from "./components/ItemForm";
 import mockItems from "./db/mock.json"
 import ItemList from "./components/ItemList";
 
 function App() {
   const [items, setItems] = useState(mockItems);
+  const [soltedItmes, setSoltedItems] = useState([])
+
+  const handleNewest = ()=> {
+    const newEstItem =  items.solt((item1, item2)=> (item2.createdAt - item1.createdAt) )
+    setItems(newEstItem);
+  }
 
 
   return (
   <div>
-  {/*<itemForm/>*/}
+  <ItemForm/>
+    <button onClick={handleNewest}>최신순</button>
+    <button>칼로리순</button>
     <ItemList items={items}/>
+
   </div>
   );
 }
